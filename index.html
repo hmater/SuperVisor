@@ -1,0 +1,150 @@
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="jquery.mobile.min.css" />
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="jquery.mobile.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		$(".onoff").on("change", function(){
+		if ($(this).val() == "off")
+		{
+		
+		$("#"+this.name).html("razon1");
+		}
+		else
+		{
+		
+		$("#"+this.name).html("");
+		}
+		});
+		});
+
+	</script>
+
+</head>
+<body>
+
+
+	<div data-role="page" data-theme="b" id="main">
+
+		<div data-role="header">
+			<h1>MAQUINARIAS</h1>
+		</div>
+
+		<div data-role="content">
+			<p><i>To my friend...</i></p>
+		</div>
+
+		<a href="#CM" data-transition="Fade" data-role="button">Camiones Mineros</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Actroz</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Bulldozers</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Motoniveladoras</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Camiones Aljibes</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Weeldozers</a>
+		<a href="#CM" data-transition="Fade" data-role="button">Picarocas</a>
+
+		<div data-role="footer">
+			<h2 style="font-weight:normal">DEMO SuperVisor 1.0 - MagicanSoft 2015</h2>
+			
+		</div>
+
+	</div>
+
+
+
+	<div data-role="page" data-theme="b" id="CM">
+
+		<div data-role="header">
+			<h1>CAMIONES MINEROS</h1>
+		</div>
+
+		<div data-role="content">
+			<p><i>To my friend...</i></p>
+		</div>
+		
+		<ul data-role="listview">
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 1</h4>
+					<div class="ui-block-b RazonCamion" id="Camion1"></div>
+					<select name="Camion1" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 2</h4>
+					<div class="ui-block-b RazonCamion" id="Camion2"></div>
+					<select name="Camion2" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 3</h4>
+					<div class="ui-block-b RazonCamion" id="Camion3"></div>
+					<select name="Camion3" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 4</h4>
+					<div class="ui-block-b RazonCamion" id="Camion4"></div>
+					<select name="Camion4" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 5</h4>
+					<div class="ui-block-b RazonCamion" id="Camion5"></div>
+					<select name="Camion5" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Camion 6</h4>
+					<div class="ui-block-b RazonCamion" id="Camion6"></div>
+					<select name="Camion6" data-role="slider" class="ui-block-c onoff">
+					<option value="off">Off</option>
+					<option value="on" selected="selected">On</option>
+					</select>
+				</div>
+			</li>
+
+
+		</ul>
+		<div class="ui-grid-b">
+
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b"><a href="#main" data-role="button" data-transition="Fade" data-theme="a">Volver</a></div>
+		<div class="ui-block-c"></div>
+
+		</div>
+		<div data-role="footer">
+			<h2 style="font-weight:normal">DEMO SuperVisor 1.0 - MagicanSoft 2015</h2>
+		</div>
+
+	</div>
+
+</body>
+</html>
