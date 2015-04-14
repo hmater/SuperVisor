@@ -6,6 +6,23 @@
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jquery.mobile.min.js"></script>
 	<script type="text/javascript">
+
+
+    $(document).bind("mobileinit", function(){
+        $.mobile.touchOverflowEnabled = false;
+        $.mobile.defaultPageTransition = 'none';
+        $.mobile.defaultDialogTransition = 'none';
+        $.mobile.useFastClick = false
+        $.mobile.buttonMarkup.hoverDelay = 0;  
+        $.mobile.page.prototype.options.domCache = false;                   
+        $.event.special.swipe.scrollSupressionThreshold = 100;
+    });
+    $(document).bind("touchstart", function(event){})
+
+
+
+
+
 		$(function(){
 		$(".onoff").on("change", function(){
 		if ($(this).val() == "off")
