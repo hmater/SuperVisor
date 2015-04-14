@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        xmlns:android = "http://schemas.android.com/apk/res/android"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+        
+        <icon src="panchoico.png" width="57" height="57"/>
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>DEMO SuperVisor 1.0</name>
+
+    <description>
+        DEMO
+    </description>
+
+    <author email="hmater@gmail.com">
+        Victor Perez G. 
+    </author>
+    
+    <!--preference name="orientation" value="landscape" /-->
+
+    <gap:config-file platform="android" parent="/manifest/application">
+        <activity android:launchMode="singleInstance" />
+    </gap:config-file>
+
+</widget>
