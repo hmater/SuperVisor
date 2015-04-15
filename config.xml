@@ -6,7 +6,7 @@
         versionCode = "1504150524" 
         version     = "1.1" >
         
-        <icon src="panchoico.png" width="57" height="57"/>
+        <icon src="panchoico.png" width="72" height="72"/>
 
     <!-- versionCode is optional and Android only -->
 
@@ -21,6 +21,7 @@
     </author>
     
     <!--preference name="orientation" value="landscape" /-->
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
