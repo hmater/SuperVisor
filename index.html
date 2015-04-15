@@ -17,7 +17,7 @@
         $.mobile.page.prototype.options.domCache = false;                   
         $.event.special.swipe.scrollSupressionThreshold = 100;
     });
-    $(document).bind("touchstart", function(event){})
+    //$(document).bind("touchstart", function(event){})
 
 
 
@@ -27,8 +27,16 @@
 		$(".onoff").on("change", function(){
 		if ($(this).val() == "off")
 		{
-		
-		$("#"+this.name).html("razon1");
+			$("#"+this.name).html( "<form><input type='text' size='10'/></form>" );
+		//$.mobile.changePage('#RZ', {transition: 'none', role: 'dialog'});
+
+		//var origen = $(this);
+		/*
+			$("#save").ontouchstart(function(){
+				//$("#"+this.name).html( $("#razon").val() );
+				alert($("#razon").val());
+			});*/
+
 		}
 		else
 		{
@@ -38,7 +46,16 @@
 		});
 		});
 
+
+
+
+
+
+
+
 	</script>
+
+
 
 </head>
 <body>
@@ -227,10 +244,7 @@
 
 		<div data-role="header">
 			<h1>BULLDOZERS</h1>
-		</div>
-
-		
-		
+		</div>		
 		<ul data-role="listview">
 			<li>
 				<div class="ui-grid-b">
@@ -523,6 +537,30 @@
 
 	</div>
 
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<div data-role="page" data-theme="b" id="RZ">
+
+		<div data-role="header">
+			<h1>RAZON</h1>
+		</div>
+
+
+		<div data-role="content">
+			<form>
+				<input name="razon" id="razon" type="text" data-theme="a" placeholder="Cual es la razon?">
+			</form>
+		</div>
+
+		<div class="ui-grid-b">
+			<div class="ui-block-a"></div>
+			<div class="ui-block-b"><a href="" name="save" id="save" data-role="button" data-transition="none" data-theme="a">Guardar</a></div>
+			<div class="ui-block-c"></div>
+		</div>
+		<div data-role="footer">
+			<h2 style="font-weight:normal">DEMO SuperVisor 1.0 - MagicanSoft</h2>
+		</div>
+
+	</div>
 <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 </body>
 </html>
