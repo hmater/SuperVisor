@@ -3,6 +3,14 @@
 	<title></title>
 
 	<link rel="stylesheet" href="jquery.mobile.min.css" />
+
+	<style type="text/css">
+	.ui-slider{
+		float: right !important;
+	}
+
+	</style>
+
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jquery.mobile.min.js"></script>
 	<script type="text/javascript">
@@ -27,7 +35,8 @@
 		$(".onoff").on("change", function(){
 		if ($(this).val() == "off")
 		{
-			$("#"+this.name).html( "<form><input type='text' size='10'/></form>" );
+		//$("#"+this.name).html( "<form><input type='text' size='10'/></form>" ); //la buena
+		document.getElementById("form"+this.name).style.visibility = "visible";
 		//$.mobile.changePage('#RZ', {transition: 'none', role: 'dialog'});
 
 		//var origen = $(this);
@@ -40,8 +49,10 @@
 		}
 		else
 		{
-		
-		$("#"+this.name).html("");
+		document.getElementById("input"+this.name).value = "";
+		document.getElementById("form"+this.name).style.visibility = "hidden";
+		//$("#"+this.name).html(""); //le good
+		//$("#form"+this.name).Style.display="none";
 		}
 		});
 		});
@@ -98,7 +109,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 1</h4>
-					<div class="ui-block-b RazonCamion" id="Camion1"></div>
+					<div class="ui-block-b RazonCamion" id="Camion1">
+						<form id="formCamion1" style="visibility:hidden">
+							<input id="inputCamion1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -109,7 +124,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 2</h4>
-					<div class="ui-block-b RazonCamion" id="Camion2"></div>
+					<div class="ui-block-b RazonCamion" id="Camion2">
+						<form id="formCamion2" style="visibility:hidden">
+							<input id="inputCamion2" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -120,7 +139,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 3</h4>
-					<div class="ui-block-b RazonCamion" id="Camion3"></div>
+					<div class="ui-block-b RazonCamion" id="Camion3">
+						<form id="formCamion3" style="visibility:hidden">
+							<input id="inputCamion3" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -131,7 +154,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 4</h4>
-					<div class="ui-block-b RazonCamion" id="Camion4"></div>
+					<div class="ui-block-b RazonCamion" id="Camion4">
+						<form id="formCamion4" style="visibility:hidden">
+							<input id="inputCamion4" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -142,7 +169,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 5</h4>
-					<div class="ui-block-b RazonCamion" id="Camion5"></div>
+					<div class="ui-block-b RazonCamion" id="Camion5">
+						<form id="formCamion5" style="visibility:hidden">
+							<input id="inputCamion5" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -153,7 +184,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 6</h4>
-					<div class="ui-block-b RazonCamion" id="Camion6"></div>
+					<div class="ui-block-b RazonCamion" id="Camion6">
+						<form id="formCamion6" style="visibility:hidden">
+							<input id="inputCamion6" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion6" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -164,7 +199,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 7</h4>
-					<div class="ui-block-b RazonCamion" id="Camion7"></div>
+					<div class="ui-block-b RazonCamion" id="Camion7">
+						<form id="formCamion7" style="visibility:hidden">
+							<input id="inputCamion7" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion7" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -175,7 +214,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 8</h4>
-					<div class="ui-block-b RazonCamion" id="Camion8"></div>
+					<div class="ui-block-b RazonCamion" id="Camion8">
+						<form id="formCamion8" style="visibility:hidden">
+							<input id="inputCamion8" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion8" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -186,7 +229,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 9</h4>
-					<div class="ui-block-b RazonCamion" id="Camion9"></div>
+					<div class="ui-block-b RazonCamion" id="Camion9">
+						<form id="formCamion9" style="visibility:hidden">
+							<input id="inputCamion9" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion9" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -197,7 +244,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 10</h4>
-					<div class="ui-block-b RazonCamion" id="Camion10"></div>
+					<div class="ui-block-b RazonCamion" id="Camion10">
+						<form id="formCamion10" style="visibility:hidden">
+							<input id="inputCamion10" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion10" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -208,7 +259,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 11</h4>
-					<div class="ui-block-b RazonCamion" id="Camion11"></div>
+					<div class="ui-block-b RazonCamion" id="Camion11">
+						<form id="formCamion11" style="visibility:hidden">
+							<input id="inputCamion11" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion11" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -219,7 +274,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 12</h4>
-					<div class="ui-block-b RazonCamion" id="Camion12"></div>
+					<div class="ui-block-b RazonCamion" id="Camion12">
+						<form id="formCamion12" style="visibility:hidden">
+							<input id="inputCamion12" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Camion12" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -249,7 +308,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Bulldozer 1</h4>
-					<div class="ui-block-b RazonBulldozer" id="Bulldozer1"></div>
+					<div class="ui-block-b RazonBulldozer" id="Bulldozer1">
+						<form id="formBulldozer1" style="visibility:hidden">
+							<input id="inputBulldozer1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Bulldozer1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -260,7 +323,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Bulldozer 2</h4>
-					<div class="ui-block-b RazonBulldozer" id="Bulldozer2"></div>
+					<div class="ui-block-b RazonBulldozer" id="Bulldozer2">
+						<form id="formBulldozer2" style="visibility:hidden">
+							<input id="inputBulldozer2" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Bulldozer2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -271,7 +338,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Bulldozer 3</h4>
-					<div class="ui-block-b RazonBulldozer" id="Bulldozer3"></div>
+					<div class="ui-block-b RazonBulldozer" id="Bulldozer3">
+						<form id="formBulldozer3" style="visibility:hidden">
+							<input id="inputBulldozer3" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Bulldozer3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -282,7 +353,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Bulldozer 4</h4>
-					<div class="ui-block-b RazonBulldozer" id="Bulldozer4"></div>
+					<div class="ui-block-b RazonBulldozer" id="Bulldozer4">
+						<form id="formBulldozer4" style="visibility:hidden">
+							<input id="inputBulldozer4" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Bulldozer4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -293,7 +368,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Bulldozer 5</h4>
-					<div class="ui-block-b RazonBulldozer" id="Bulldozer5"></div>
+					<div class="ui-block-b RazonBulldozer" id="Bulldozer5">
+						<form id="formBulldozer5" style="visibility:hidden">
+							<input id="inputBulldozer5" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Bulldozer5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -326,7 +405,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Motoniveladora 1</h4>
-					<div class="ui-block-b RazonMotoniveladora" id="Motoniveladora1"></div>
+					<div class="ui-block-b RazonMotoniveladora" id="Motoniveladora1">
+						<form id="formMotoniveladora1" style="visibility:hidden">
+							<input id="inputMotoniveladora1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Motoniveladora1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -337,7 +420,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Motoniveladora 2</h4>
-					<div class="ui-block-b RazonMotoniveladora" id="Motoniveladora2"></div>
+					<div class="ui-block-b RazonMotoniveladora" id="Motoniveladora2">
+						<form id="formMotoniveladora2" style="visibility:hidden">
+							<input id="inputMotoniveladora2" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Motoniveladora2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -371,7 +458,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Aljibe 1</h4>
-					<div class="ui-block-b RazonAljibe" id="Aljibe1"></div>
+					<div class="ui-block-b RazonAljibe" id="Aljibe1">
+						<form id="formAljibe1" style="visibility:hidden">
+							<input id="inputAljibe1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Aljibe1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -382,7 +473,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Aljibe 2</h4>
-					<div class="ui-block-b RazonAljibe" id="Aljibe2"></div>
+					<div class="ui-block-b RazonAljibe" id="Aljibe2">
+						<form id="formAljibe2" style="visibility:hidden">
+							<input id="inputAljibe2" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Aljibe2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -416,7 +511,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Wheeldozer 1</h4>
-					<div class="ui-block-b RazonWheeldozer" id="Wheeldozer1"></div>
+					<div class="ui-block-b RazonWheeldozer" id="Wheeldozer1">
+						<form id="formWheeldozer1" style="visibility:hidden">
+							<input id="inputWheeldozer1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Wheeldozer1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -449,7 +548,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Picarrocas 1</h4>
-					<div class="ui-block-b RazonPicarrocas" id="Picarrocas1"></div>
+					<div class="ui-block-b RazonPicarrocas" id="Picarrocas1">
+						<form id="formPicarrocas1" style="visibility:hidden">
+							<input id="inputPicarrocas1" type="text"  data-theme="a">
+						</form>
+					</div>
 					<select name="Picarrocas1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -477,13 +580,19 @@
 			<h1>EXCAVADORAS</h1>
 		</div>
 
-		
+		<div data-role="content">
 		
 		<ul data-role="listview">
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Excavadora 1</h4>
-					<div class="ui-block-b RazonExcavadora" id="Excavadora1"></div>
+					<div class="ui-block-b RazonExcavadora" id="Excavadora1">
+
+						<form id="formExcavadora1" style="visibility:hidden">
+							<input id="inputExcavadora1" type="text"  data-theme="a">
+						</form>
+
+					</div>
 					<select name="Excavadora1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -494,7 +603,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Excavadora 2</h4>
-					<div class="ui-block-b RazonExcavadora" id="Excavadora2"></div>
+					<div class="ui-block-b RazonExcavadora" id="Excavadora2">
+						<form id="formExcavadora2" style="visibility:hidden">
+							<input id="inputExcavadora2" type="text" data-theme="a">
+						</form>
+					</div>
 					<select name="Excavadora2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -505,7 +618,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Excavadora 3</h4>
-					<div class="ui-block-b RazonExcavadora" id="Excavadora3"></div>
+					<div class="ui-block-b RazonExcavadora" id="Excavadora3">
+						<form id="formExcavadora3" style="visibility:hidden">
+							<input id="inputExcavadora3" type="text" data-theme="a">
+						</form>
+					</div>
 					<select name="Excavadora3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -516,7 +633,11 @@
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Excavadora 4</h4>
-					<div class="ui-block-b RazonExcavadora" id="Excavadora4"></div>
+					<div class="ui-block-b RazonExcavadora" id="Excavadora4">
+						<form id="formExcavadora4" style="visibility:hidden">
+							<input id="inputExcavadora4" type="text" data-theme="a">
+						</form>
+					</div>
 					<select name="Excavadora4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
@@ -524,6 +645,9 @@
 				</div>
 			</li>
 		</ul>
+
+		</div><!--/////////     CONTENT END       ///////////-->
+
 		<div class="ui-grid-b">
 
 		<div class="ui-block-a"></div>
@@ -531,6 +655,9 @@
 		<div class="ui-block-c"></div>
 
 		</div>
+
+		
+
 		<div data-role="footer">
 			<h2 style="font-weight:normal">DEMO SuperVisor 1.0 - MagicanSoft</h2>
 		</div>
