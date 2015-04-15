@@ -15,6 +15,16 @@
 	<script src="jquery.mobile.min.js"></script>
 	<script type="text/javascript">
 
+	var MAQUINAS;
+	var CM;    	  
+	var BD;
+	var MN;
+	var CA;
+	var WD;
+	var PR;
+	var EX;
+	var PF;
+	var CF;
 
     $(document).bind("mobileinit", function(){
         $.mobile.touchOverflowEnabled = false;
@@ -25,44 +35,173 @@
         $.mobile.page.prototype.options.domCache = false;                   
         $.event.special.swipe.scrollSupressionThreshold = 100;
     });
-    //$(document).bind("touchstart", function(event){})
+    $(document).bind("touchstart", function(event){});
 
-
-
-
-
+ 
 		$(function(){
 		$(".onoff").on("change", function(){
+
+		MAQUINAS = $(this).parent().parent().parent().parent().attr('id');	
+
 		if ($(this).val() == "off")
 		{
-		//$("#"+this.name).html( "<form><input type='text' size='10'/></form>" ); //la buena
+
 		document.getElementById("form"+this.name).style.visibility = "visible";
-		//$.mobile.changePage('#RZ', {transition: 'none', role: 'dialog'});
-
-		//var origen = $(this);
-		/*
-			$("#save").ontouchstart(function(){
-				//$("#"+this.name).html( $("#razon").val() );
-				alert($("#razon").val());
-			});*/
-
+		suma(MAQUINAS);
+		mostrar(MAQUINAS);
 		}
 		else
 		{
 		document.getElementById("input"+this.name).value = "";
 		document.getElementById("form"+this.name).style.visibility = "hidden";
-		//$("#"+this.name).html(""); //le good
-		//$("#form"+this.name).Style.display="none";
+		resta(MAQUINAS);
+		//alert(CM);
+		mostrar(MAQUINAS);
 		}
 		});
 		});
 
 
 
+		$(document).ready(function(){
+			CM=0;    	  
+			BD=0;
+			MN=0;
+			CA=0;
+			WD=0;
+			PR=0;
+			EX=0;
+			PF=0;
+			CF=0;
 
 
+		});
 
+		function suma(maquina){
+			if(maquina=="CM"){
+				CM++;
+			}
+			if(maquina=="BD"){
+				BD++;
+			}
+			if(maquina=="MN"){
+				MN++;
+			}
+			if(maquina=="CA"){
+				CA++;
+			}
+			if(maquina=="WD"){
+				WD++;
+			}
+			if(maquina=="PR"){
+				PR++;
+			}
+			if(maquina=="EX"){
+				EX++;
+			}
+			if(maquina=="PF"){
+				PF++;
+			}
+			if(maquina=="CF"){
+				CF++;
+			}
+		}
+		function resta(maquina){
+			if(maquina=="CM"){
+				CM--;
+			}
+			if(maquina=="BD"){
+				BD--;
+			}
+			if(maquina=="MN"){
+				MN--;
+			}
+			if(maquina=="CA"){
+				CA--;
+			}
+			if(maquina=="WD"){
+				WD--;
+			}
+			if(maquina=="PR"){
+				PR--;
+			}
+			if(maquina=="EX"){
+				EX--;
+			}
+			if(maquina=="PF"){
+				PF--;
+			}
+			if(maquina=="CF"){
+				CF--;
+			}
+		}
 
+		function mostrar(maquina){
+			if(maquina=="CM"){
+				if(CM==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = CM;
+				}
+			}
+			if(maquina=="BD"){
+				if(BD==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = BD;
+				}
+			}
+			if(maquina=="MN"){
+				if(MN==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = MN;
+				}
+			}
+			if(maquina=="CA"){
+				if(CA==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = CA;
+				}
+			}
+			if(maquina=="WD"){
+				if(WD==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = WD;
+				}
+			}
+			if(maquina=="PR"){
+				if(PR==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = PR;
+				}
+			}
+			if(maquina=="EX"){
+				if(EX==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = EX;
+				}
+			}
+			if(maquina=="PF"){
+				if(PF==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = PF;
+				}
+			}
+			if(maquina=="CF"){
+				if(CF==0){
+				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
+				}else{
+				document.getElementById("cont"+MAQUINAS).innerHTML = CF;
+				}
+			}
+
+		}
 
 	</script>
 
@@ -78,14 +217,15 @@
 			<h1>MAQUINARIAS</h1>
 		</div>
 
-		<a href="#CM" data-transition="none" data-role="button">Camiones Mineros</a>
-		<a href="#BD" data-transition="none" data-role="button">Bulldozers</a>
-		<a href="#MN" data-transition="none" data-role="button">Motoniveladoras</a>
-		<a href="#CA" data-transition="none" data-role="button">Camiones Aljibes</a>
-		<a href="#WD" data-transition="none" data-role="button">Wheeldozers</a>
-		<a href="#PR" data-transition="none" data-role="button">Picarocas</a>
-		<a href="#EX" data-transition="none" data-role="button">Excavadoras</a>
-		<a href="#PF" data-transition="none" data-role="button">Perforadoras</a>
+		<a href="#CM" data-transition="none" data-role="button">Camiones Mineros 		<div id="contCM" style="float:right;"></div>		</a>
+		<a href="#BD" data-transition="none" data-role="button">Bulldozers 				<div id="contBD" style="float:right;"></div>		</a>
+		<a href="#MN" data-transition="none" data-role="button">Motoniveladoras 		<div id="contMN" style="float:right;"></div>		</a>
+		<a href="#CA" data-transition="none" data-role="button">Camiones Aljibes 		<div id="contCA" style="float:right;"></div>		</a>
+		<a href="#WD" data-transition="none" data-role="button">Wheeldozers 			<div id="contWD" style="float:right;"></div>		</a>
+		<a href="#PR" data-transition="none" data-role="button">Picarocas 				<div id="contPR" style="float:right;"></div>		</a>
+		<a href="#EX" data-transition="none" data-role="button">Excavadoras 			<div id="contEX" style="float:right;"></div>		</a>
+		<a href="#PF" data-transition="none" data-role="button">Perforadoras 			<div id="contPF" style="float:right;"></div>		</a>
+		<a href="#CF" data-transition="none" data-role="button">Cargadores Frontales 	<div id="contCF" style="float:right;"></div>		</a>
 
 		<div data-role="footer">
 			<h2 style="font-weight:normal">DEMO SuperVisor 1.1 - MagicanSoft</h2>
@@ -579,26 +719,7 @@
 			<h1>EXCAVADORAS</h1>
 		</div>
 
-		<div data-role="content">
-		
 		<ul data-role="listview">
-			<li>
-				<div class="ui-grid-b">
-					<h4 class="ui-block-a">Excavadora 1</h4>
-					<div class="ui-block-b RazonExcavadora" id="Excavadora1">
-
-						<form id="formExcavadora1" style="visibility:hidden">
-							<input id="inputExcavadora1" type="text"  data-theme="a">
-						</form>
-
-					</div>
-					<select name="Excavadora1" data-role="slider" class="ui-block-c onoff">
-					<option value="off">F/S</option>
-					<option value="on" selected="selected">OP</option>
-					</select>
-				</div>
-			</li>
-
 			<li>
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Excavadora 2</h4>
@@ -643,9 +764,23 @@
 					</select>
 				</div>
 			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">Excavadora 5</h4>
+					<div class="ui-block-b RazonExcavadora" id="Excavadora5">
+						<form id="formExcavadora5" style="visibility:hidden">
+							<input id="inputExcavadora5" type="text" data-theme="a">
+						</form>
+					</div>
+					<select name="Excavadora5" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
 		</ul>
 
-		</div><!--/////////     CONTENT END       ///////////-->
 
 		<div class="ui-grid-b">
 
@@ -670,8 +805,6 @@
 		<div data-role="header">
 			<h1>PERFORADORAS</h1>
 		</div>
-
-		<div data-role="content">
 		
 		<ul data-role="listview">
 			<li>
@@ -737,7 +870,107 @@
 			</li>
 		</ul>
 
-		</div><!--/////////     CONTENT END       ///////////-->
+		<div class="ui-grid-b">
+
+		<div class="ui-block-a"></div>
+		<div class="ui-block-b"><a href="#main" data-role="button" data-transition="none" data-theme="a">Volver</a></div>
+		<div class="ui-block-c"></div>
+
+		</div>
+
+		
+
+		<div data-role="footer">
+			<h2 style="font-weight:normal">DEMO SuperVisor 1.1 - MagicanSoft</h2>
+		</div>
+
+	</div>
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<div data-role="page" data-theme="b" id="CF">
+
+		<div data-role="header">
+			<h1>CARGADOR FRONTAL</h1>
+		</div>
+
+		<ul data-role="listview">
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">C. Frontal 1</h4>
+					<div class="ui-block-b RazonCFrontal" id="CFrontal1">
+
+						<form id="formCFrontal1" style="visibility:hidden">
+							<input id="inputCFrontal1" type="text"  data-theme="a">
+						</form>
+
+					</div>
+					<select name="CFrontal1" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">C. Frontal 2</h4>
+					<div class="ui-block-b RazonCFrontal" id="CFrontal2">
+						<form id="formCFrontal2" style="visibility:hidden">
+							<input id="inputCFrontal2" type="text" data-theme="a">
+						</form>
+					</div>
+					<select name="CFrontal2" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">C. Frontal 3</h4>
+					<div class="ui-block-b RazonCFrontal" id="CFrontal3">
+						<form id="formCFrontal3" style="visibility:hidden">
+							<input id="inputCFrontal3" type="text" data-theme="a">
+						</form>
+					</div>
+					<select name="CFrontal3" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">C. Frontal 4</h4>
+					<div class="ui-block-b RazonCFrontal" id="CFrontal4">
+						<form id="formCFrontal4" style="visibility:hidden">
+							<input id="inputCFrontal4" type="text" data-theme="a">
+						</form>
+					</div>
+					<select name="CFrontal4" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
+
+			<li>
+				<div class="ui-grid-b">
+					<h4 class="ui-block-a">C. Frontal 5</h4>
+					<div class="ui-block-b RazonCFrontal" id="CFrontal5">
+						<form id="formCFrontal5" style="visibility:hidden">
+							<input id="inputCFrontal5" type="text" data-theme="a">
+						</form>
+					</div>
+					<select name="CFrontal5" data-role="slider" class="ui-block-c onoff">
+					<option value="off">F/S</option>
+					<option value="on" selected="selected">OP</option>
+					</select>
+				</div>
+			</li>
+		</ul>
 
 		<div class="ui-grid-b">
 
@@ -756,6 +989,7 @@
 	</div>
 
 <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 	<div data-role="page" data-theme="b" id="RZ">
 
 		<div data-role="header">
