@@ -21,7 +21,7 @@
     </author>
     
     <!--preference name="orientation" value="landscape" /-->
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+    <!--gap:plugin name="de.appplant.cordova.plugin.local-notification" /-->
 
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
