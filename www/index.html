@@ -3,7 +3,7 @@
 	<title></title>
 
 	<link rel="stylesheet" href="jquery.mobile.min.css" />
-
+	<link rel="stylesheet" href="red_button.css" />
 	<style type="text/css">
 	.ui-slider{
 		float: right !important;
@@ -19,60 +19,13 @@
 	.ui-header .ui-title{
 		margin: 0 10%;
 	}
-
-	/* JQM RED THEME TEST*/
-
-.ui-btn-up-f {
-	/*border: 1px solid #711414;*/
-	border: 1px solid #AB2525 !important;
-	background: #ab2525;
-	text-shadow: 0 -1px 1px #711414;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #c44f4f /*{a-bup-background-start}*/), to( #ab2525 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/);
-}
- 
-.ui-btn-up-f a.ui-link-inherit {
-	color: 					#fff;
-}
- 
-.ui-btn-up-f:active {
-	/*border: 1px solid #782323;*/
-	border: 1px solid #ab2525 !important;
-	background: #c44f4f;
-	text-shadow: 0 -1px 1px #782323;
-	background-image: -moz-linear-gradient(top, #9e3939, #c44f4f);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #9e3939), color-stop(1, #c44f4f));
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #9e3939 /*{a-bdown-background-start}*/), to( #c44f4f /*{a-bdown-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/);
-}
- 
-.ui-btn-up-f:active a.ui-link-inherit {
-	color: 					#fff;
-}
- 
-.ui-btn-up-f {
-	color: white;
-	font-weight: bold;
-	text-decoration: none;
-}
-
 	</style>
 
 	<script src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="SQLitePlugin.js"></script> <!--refering database-->
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jquery.mobile.min.js"></script>
 	<script type="text/javascript">
-
-	// Wait for Cordova to load
-	document.addEventListener("deviceready", onDeviceReady, false);
 
 	var MAQUINAS;
 	var CM;    	  
@@ -264,7 +217,12 @@
 
 /* TRYING TO USE DATABASE */ 
 
-	
+	/* TEST1 */
+	document.addEventListener("deviceready", function(){ alert('device is ready'); } , false);
+
+	/*
+	// Wait for Cordova to load
+	document.addEventListener("deviceready", onDeviceReady, false);
 
 	// Cordova is ready
 	function onDeviceReady() {
@@ -274,10 +232,6 @@
 
 	  	var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
 	  	
-	  	/*db.transaction(function (tx) {
-		  //tx.executeSql('CREATE TABLE IF NOT EXISTS foo (id unique, text)');
-		  tx.executeSql('INSERT INTO MAQUINAS_TABLE (id, tipo, single_id, status, descrip) VALUES (NULL, "synergies")');
-		});*/
 		function Test(){
 			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
 			  var len = results.rows.length, i;
@@ -287,7 +241,9 @@
 			}
 	});
 
-	}
+	}*/
+
+
 /* TRYING TO USE DATABASE */ 
 	</script>
 
