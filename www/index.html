@@ -224,9 +224,10 @@
 
 		alert('device is ready'); 
 
-		getElementById('ready').style.visibility="visible";
+		alert(getElementById('ready').style.visibility);
 
-		/*
+		alert('mid');
+
 		function Test(){
 			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
 			  var len = results.rows.length, i;
@@ -235,7 +236,8 @@
 			  }
 			}
 		}
-		*/
+		
+		alert('salida');
 
 
 	} , true);
