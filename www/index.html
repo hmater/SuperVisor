@@ -217,8 +217,28 @@
 
 /* TRYING TO USE DATABASE */ 
 
+
+
 	/* TEST1 */
-	document.addEventListener("deviceready", function(){ alert('device is ready'); } , false);
+	document.addEventListener("deviceready", function(){ 
+
+		alert('device is ready'); 
+
+		getElementById('ready').style.visibility="visible";
+
+
+		function Test(){
+			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+			  var len = results.rows.length, i;
+			  for (i = 0; i < len; i++) {
+			    alert(results.rows.item(i).text);
+			  }
+			}
+		}
+
+
+
+	} , false);
 
 	/*
 	// Wait for Cordova to load
