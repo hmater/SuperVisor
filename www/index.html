@@ -230,8 +230,10 @@
 
 		alert('mid');
 
+		if (var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})){
+			alert('asign ok');
+		}
 		
-		var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
 
 		/*
 		tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
