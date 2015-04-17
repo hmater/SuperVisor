@@ -21,7 +21,7 @@
 	}
 	</style>
 
-	<script src="cordova.js"></script>
+	<script src="phonegap.js"></script>
 	<script type="text/javascript" charset="utf-8" src="SQLitePlugin.js"></script> <!--refering database-->
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jquery.mobile.min.js"></script>
@@ -229,7 +229,7 @@
 		alert('mid');
 
 		var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
-		
+
 		tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
 		  var len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
@@ -241,7 +241,7 @@
 		alert('salida');
 
 
-	} , true);
+	} , false);
 
 	/*
 	// Wait for Cordova to load
