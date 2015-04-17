@@ -230,7 +230,8 @@
 
 		alert('mid');
 
-		if (var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})){
+		var db;
+		if (db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})) {
 			alert('asign ok');
 		}
 		
