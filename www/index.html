@@ -224,18 +224,19 @@
 
 		alert('device is ready'); 
 
-		alert(getElementById('ready').style.visibility);
+		//alert(getElementById('ready').style.visibility);
 
 		alert('mid');
 
-		function Test(){
-			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
-			  var len = results.rows.length, i;
-			  for (i = 0; i < len; i++) {
-			    alert(results.rows.item(i).text);
-			  }
-			}
+		var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
+		
+		tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+		  var len = results.rows.length, i;
+		  for (i = 0; i < len; i++) {
+		    alert(results.rows.item(i).text);
+		  }
 		}
+		
 		
 		alert('salida');
 
