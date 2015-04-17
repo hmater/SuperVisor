@@ -66,9 +66,13 @@
 
 	</style>
 
+	<script src="cordova.js"></script>
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jquery.mobile.min.js"></script>
 	<script type="text/javascript">
+
+	// Wait for Cordova to load
+	document.addEventListener("deviceready", onDeviceReady, false);
 
 	var MAQUINAS;
 	var CM;    	  
@@ -258,8 +262,33 @@
 		}
 
 
+/* TRYING TO USE DATABASE */ 
 
+	
 
+	// Cordova is ready
+	function onDeviceReady() {
+
+		// is ready?
+		getElementById('ready').style.visibility="visible";
+
+	  	var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
+	  	
+	  	/*db.transaction(function (tx) {
+		  //tx.executeSql('CREATE TABLE IF NOT EXISTS foo (id unique, text)');
+		  tx.executeSql('INSERT INTO MAQUINAS_TABLE (id, tipo, single_id, status, descrip) VALUES (NULL, "synergies")');
+		});*/
+		function Test(){
+			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+			  var len = results.rows.length, i;
+			  for (i = 0; i < len; i++) {
+			    alert(results.rows.item(i).text);
+			  }
+			}
+	});
+
+	}
+/* TRYING TO USE DATABASE */ 
 	</script>
 
 
@@ -271,9 +300,10 @@
 	<div data-role="page" data-theme="b" id="main">
 
 		<div data-role="header">
+			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" onclick="Test()" style="visibility:hidden"></a>
 			<h1>MAQUINARIAS</h1>
-			
 			<a href="#DELETE" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
+			
 			
 		</div>
 

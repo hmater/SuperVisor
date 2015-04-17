@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id          = "com.phonegap.example"
-        versionCode = "1504150524" 
+        versionCode = "1704150957" 
         version     = "1.1" >
         
         <icon src="panchoico.png" width="72" height="72"/>
@@ -17,11 +17,12 @@
     </description>
 
     <author email="hmater@gmail.com">
-        Victor Perez G. 
+        Victor Perez G. - MagicanSoft
     </author>
     
     <!--preference name="orientation" value="landscape" /-->
     <!--gap:plugin name="de.appplant.cordova.plugin.local-notification" /-->
+    <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
 
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
