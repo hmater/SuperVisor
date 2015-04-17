@@ -16,6 +16,54 @@
 		border-radius: 10px !important;
 	}
 
+	.ui-header .ui-title{
+		margin: 0 10%;
+	}
+
+	/* JQM RED THEME TEST*/
+
+.ui-btn-up-f {
+	/*border: 1px solid #711414;*/
+	border: 1px solid #AB2525 !important;
+	background: #ab2525;
+	text-shadow: 0 -1px 1px #711414;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #c44f4f /*{a-bup-background-start}*/), to( #ab2525 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #c44f4f /*{a-bup-background-start}*/, #ab2525 /*{a-bup-background-end}*/);
+}
+ 
+.ui-btn-up-f a.ui-link-inherit {
+	color: 					#fff;
+}
+ 
+.ui-btn-up-f:active {
+	/*border: 1px solid #782323;*/
+	border: 1px solid #ab2525 !important;
+	background: #c44f4f;
+	text-shadow: 0 -1px 1px #782323;
+	background-image: -moz-linear-gradient(top, #9e3939, #c44f4f);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #9e3939), color-stop(1, #c44f4f));
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #9e3939 /*{a-bdown-background-start}*/), to( #c44f4f /*{a-bdown-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #9e3939 /*{a-bdown-background-start}*/, #c44f4f /*{a-bdown-background-end}*/);
+}
+ 
+.ui-btn-up-f:active a.ui-link-inherit {
+	color: 					#fff;
+}
+ 
+.ui-btn-up-f {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 	</style>
 
 	<script src="jquery-1.11.1.min.js"></script>
@@ -224,6 +272,9 @@
 
 		<div data-role="header">
 			<h1>MAQUINARIAS</h1>
+			
+			<a href="#DELETE" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
+			
 		</div>
 
 		<a href="#CM" data-transition="none" data-role="button">Camiones Mineros 		<div class="cont" id="contCM" style="float:right;"></div>		</a>
@@ -255,6 +306,7 @@
 		
 		<ul data-role="listview">
 			<li>
+				
 				<div class="ui-grid-b">
 					<h4 class="ui-block-a">Camion 1</h4>
 					<div class="ui-block-b RazonCamion" id="Camion1">
@@ -266,7 +318,10 @@
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
+
 				</div>
+				
+				
 			</li>
 
 			<li>
@@ -999,24 +1054,23 @@
 
 <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-	<div data-role="page" data-theme="b" id="RZ">
+	<div data-role="page" data-theme="b" id="DELETE" data-dialog="true">
 
 		<div data-role="header">
-			<h1>RAZON</h1>
+			<h1>BORRAR TODO</h1>
 		</div>
 
 
-		<div data-role="content">
-			<form>
+		<div data-role="content" align="center">
+
+			<!--form>
 				<input name="razon" id="razon" type="text" data-theme="a" placeholder="Cual es la razon?">
-			</form>
+			</form-->
+			<p>Seguro que deseas borrar todo?</p>
+			<a href="" name="cancel" id="cancel" data-role="button" data-transition="none" data-theme="a" data-inline="true" data-rel="back">Cancelar</a>
+			<a href="" name="delete" id="delete" data-role="button" data-transition="none" data-theme="f" data-inline="true" class="ui-btn-up-f">Borrar Todo</a>
 		</div>
 
-		<div class="ui-grid-b">
-			<div class="ui-block-a"></div>
-			<div class="ui-block-b"><a href="" name="save" id="save" data-role="button" data-transition="none" data-theme="a">Guardar</a></div>
-			<div class="ui-block-c"></div>
-		</div>
 		<div data-role="footer">
 			<h2 style="font-weight:normal">DEMO SuperVisor 1.1 - MagicanSoft</h2>
 		</div>
