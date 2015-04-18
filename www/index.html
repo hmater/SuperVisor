@@ -217,7 +217,7 @@
 
 /* TRYING TO USE DATABASE */ 
 
-
+var db;
 
 	/* TEST1 */
 	document.addEventListener("deviceready", function(){
@@ -226,34 +226,31 @@
 
 		document.getElementById('ready').style.visibility="visible";
 		
-
-		var db;
 		if (db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})) {
 			
 		}
 		
-		function show_all(){
-			alert('in');
-			db.transaction(function(tx) {
-				tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
-				  var len = results.rows.length, i;
-
-				  for (i = 0; i < len; i++) {
-				    //alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
-				  //document.getElementById('ready').style.visibility="visible";
-					  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="1"){
-					  	alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
-					  }
-				  }
-
-				});
-			});
-			alert('out');
-		}
-		
-
-
 	} , false);
+
+
+	function show_all(){
+				alert('in');
+				db.transaction(function(tx) {
+					tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+					  var len = results.rows.length, i;
+
+					  for (i = 0; i < len; i++) {
+					    //alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+					  //document.getElementById('ready').style.visibility="visible";
+						  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="1"){
+						  	alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+						  }
+					  }
+
+					});
+				});
+				alert('out');
+			}
 
 	/*
 	// Wait for Cordova to load
@@ -291,7 +288,7 @@
 	<div data-role="page" data-theme="b" id="main">
 
 		<div data-role="header">
-			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" onclick="show_all()" style="visibility:hidden"></a>
+			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" ontouchstart="show_all()" style="visibility:hidden"></a>
 			<h1>MAQUINARIAS</h1>
 			<a href="#DELETE" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
 			
