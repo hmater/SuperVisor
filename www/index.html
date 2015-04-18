@@ -224,27 +224,30 @@
 
 		alert('device is ready'); 
 
-		if(document.getElementById('ready').style.visibility="visible"){
-			
-		}
-
-	
+		document.getElementById('ready').style.visibility="visible";
+		
 
 		var db;
 		if (db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})) {
 			
 		}
 		
+		function show_all(){
+			db.transaction(function(tx) {
+				tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+				  var len = results.rows.length, i;
 
-		db.transaction(function(tx) {
-			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
-			  var len = results.rows.length, i;
-			  for (i = 0; i < len; i++) {
-			    alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
-			  }
+				  for (i = 0; i < len; i++) {
+				    //alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+				  //document.getElementById('ready').style.visibility="visible";
+					  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="1"){
+					  	alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+					  }
+				  }
+
+				});
 			});
-		});
-		
+		}
 		
 
 
