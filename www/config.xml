@@ -22,13 +22,14 @@
     
     <!--preference name="orientation" value="landscape" /-->
     <!--gap:plugin name="de.appplant.cordova.plugin.local-notification" /-->
-    <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
+    <!--gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" /-->
+    <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.4" />
 
     <!--plugin name="SQLitePlugin" value="org.pgsqlite.SQLitePlugin"/-->
     <plugins>
       <plugin name="SQLitePlugin" value="org.pgsqlite.SQLitePlugin"/>
     </plugins>
-    
+
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
     </gap:config-file>
