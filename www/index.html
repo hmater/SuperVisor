@@ -50,30 +50,25 @@
     $(document).bind("touchstart", function(event){});
 
  
-		$(function(){
+	$(function(){
 		$(".onoff").on("change", function(){
 
-		MAQUINAS = $(this).parent().parent().parent().parent().attr('id');	
+			MAQUINAS = $(this).parent().parent().parent().parent().attr('id');	
 
-		if ($(this).val() == "off")
-		{
-
-		document.getElementById("form"+this.name).style.visibility = "visible";
-		suma(MAQUINAS);
-		mostrar(MAQUINAS);
-		}
-		else
-		{
-		document.getElementById("input"+this.name).value = "";
-		document.getElementById("form"+this.name).style.visibility = "hidden";
-		resta(MAQUINAS);
-		//alert(CM);
-		mostrar(MAQUINAS);
-		}
+			if ($(this).val() == "off"){
+				document.getElementById("form"+this.name).style.visibility = "visible";
+				suma(MAQUINAS);
+				mostrar(MAQUINAS);
+			}else{
+				document.getElementById("input"+this.name).value = "";
+				document.getElementById("form"+this.name).style.visibility = "hidden";
+				resta(MAQUINAS);
+				mostrar(MAQUINAS);
+			}
 		});
-		});
+	});
 
-
+	//$('#ejemplo1').on('change', function() {});
 
 		$(document).ready(function(){
 			CM=0;    	  
@@ -85,139 +80,84 @@
 			EX=0;
 			PF=0;
 			CF=0;
-
 		});
-
+		function init_cont(){
+			CM=0;    	  
+			BD=0;
+			MN=0;
+			CA=0;
+			WD=0;
+			PR=0;
+			EX=0;
+			PF=0;
+			CF=0;
+		}
 		function suma(maquina){
-			if(maquina=="CM"){
-				CM++;
-			}
-			if(maquina=="BD"){
-				BD++;
-			}
-			if(maquina=="MN"){
-				MN++;
-			}
-			if(maquina=="CA"){
-				CA++;
-			}
-			if(maquina=="WD"){
-				WD++;
-			}
-			if(maquina=="PR"){
-				PR++;
-			}
-			if(maquina=="EX"){
-				EX++;
-			}
-			if(maquina=="PF"){
-				PF++;
-			}
-			if(maquina=="CF"){
-				CF++;
-			}
+			if(maquina=="CM"){CM++;}
+			if(maquina=="BD"){BD++;}
+			if(maquina=="MN"){MN++;}
+			if(maquina=="CA"){CA++;}
+			if(maquina=="WD"){WD++;}
+			if(maquina=="PR"){PR++;}
+			if(maquina=="EX"){EX++;}
+			if(maquina=="PF"){PF++;}
+			if(maquina=="CF"){CF++;}
 		}
 		function resta(maquina){
-			if(maquina=="CM"){
-				CM--;
-			}
-			if(maquina=="BD"){
-				BD--;
-			}
-			if(maquina=="MN"){
-				MN--;
-			}
-			if(maquina=="CA"){
-				CA--;
-			}
-			if(maquina=="WD"){
-				WD--;
-			}
-			if(maquina=="PR"){
-				PR--;
-			}
-			if(maquina=="EX"){
-				EX--;
-			}
-			if(maquina=="PF"){
-				PF--;
-			}
-			if(maquina=="CF"){
-				CF--;
-			}
+			if(maquina=="CM"){CM--;}
+			if(maquina=="BD"){BD--;}
+			if(maquina=="MN"){MN--;}
+			if(maquina=="CA"){CA--;}
+			if(maquina=="WD"){WD--;}
+			if(maquina=="PR"){PR--;}
+			if(maquina=="EX"){EX--;}
+			if(maquina=="PF"){PF--;}
+			if(maquina=="CF"){CF--;}
 		}
 
 		function mostrar(maquina){
 			if(maquina=="CM"){
-				if(CM==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = CM;
-				}
+				if(CM==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = CM;}
 			}
 			if(maquina=="BD"){
-				if(BD==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = BD;
-				}
+				if(BD==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = BD;}
 			}
 			if(maquina=="MN"){
-				if(MN==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = MN;
-				}
+				if(MN==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = MN;}
 			}
 			if(maquina=="CA"){
-				if(CA==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = CA;
-				}
+				if(CA==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = CA;}
 			}
 			if(maquina=="WD"){
-				if(WD==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = WD;
-				}
+				if(WD==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = WD;}
 			}
 			if(maquina=="PR"){
-				if(PR==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = PR;
-				}
+				if(PR==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = PR;}
 			}
 			if(maquina=="EX"){
-				if(EX==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = EX;
-				}
+				if(EX==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = EX;}
 			}
 			if(maquina=="PF"){
-				if(PF==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = PF;
-				}
+				if(PF==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = PF;}
 			}
 			if(maquina=="CF"){
-				if(CF==0){
-				document.getElementById("cont"+MAQUINAS).innerHTML = "";	
-				}else{
-				document.getElementById("cont"+MAQUINAS).innerHTML = CF;
-				}
+				if(CF==0){document.getElementById("cont"+MAQUINAS).innerHTML = "";
+				}else{document.getElementById("cont"+MAQUINAS).innerHTML = CF;}
 			}
-
 		}
 
 
 /* TRYING TO USE DATABASE */ 
 
-var db;
+	var db;
 
 	/* TEST1 */
 	document.addEventListener("deviceready", function(){
@@ -226,60 +166,59 @@ var db;
 
 		document.getElementById('ready').style.visibility="visible";
 		
-		if (db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})) {
-			
-		}
+		db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1}))
+		show_all();
+		
 		
 	} , false);
 
 
 	function show_all(){
-				//alert('in');
-				db.transaction(function(tx) {
-					tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
-					  var len = results.rows.length, i;
+		init_cont();
+		db.transaction(function(tx) {
+			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
+			  var len = results.rows.length, i;
 
-					  for (i = 0; i < len; i++) {
-					    //alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
-					  //document.getElementById('ready').style.visibility="visible";
-						  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="0"){
-						  	//alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
-						  	document.getElementById('ready').style.visibility="visible";
-						  }
-					  }
+			  	for (i = 0; i < len; i++) {
 
-					});
-				});
-				//alert('out');
-			}
+					if(results.rows.item(i).tipo=="CM"){tipo_maquina="Camion";}
+					if(results.rows.item(i).tipo=="BD"){tipo_maquina="Bulldozer";}
+					if(results.rows.item(i).tipo=="MN"){tipo_maquina="Motoniveladora";}
+					if(results.rows.item(i).tipo=="CA"){tipo_maquina="Aljibe";}
+					if(results.rows.item(i).tipo=="WD"){tipo_maquina="Wheeldozer";}
+					if(results.rows.item(i).tipo=="PR"){tipo_maquina="Picarrocas";}
+					if(results.rows.item(i).tipo=="EX"){tipo_maquina="Excavadora";}
+					if(results.rows.item(i).tipo=="PF"){tipo_maquina="Perforadora";}
+					if(results.rows.item(i).tipo=="CF"){tipo_maquina="CFrontal";}
+
+				  	if(results.rows.item(i).status=="0"){
+					  	$("#select"+tipo_maquina+results.rows.item(i).single_id).val('off').slider("refresh");
+					  	document.getElementById("input"+tipo_maquina+results.rows.item(i).single_id).value = results.rows.item(i).descrip;
+						document.getElementById("form"+tipo_maquina+results.rows.item(i).single_id).style.visibility = "visible";
+						suma(results.rows.item(i).tipo);
+						mostrar(results.rows.item(i).tipo);
+				  	}
+			  	}
+			});
+		});
+
+	}
+
+
+	function update(fstatus, fdescrip, ftipo, fsingle_id){
+		db.transaction(function(tx){
+			tx.executeSql('UPDATE MAQUINAS_TABLE SET status=?,descrip=? WHERE tipo=? AND single_id=?', [fstatus, fdescrip, ftipo, fsingle_id]);
+		});
+		show_all();
+	}
+
 
 
 
 	function chan(){
 		$("#selectCamion1").val('on').slider("refresh");
 	}
-	/*
-	// Wait for Cordova to load
-	document.addEventListener("deviceready", onDeviceReady, false);
 
-	// Cordova is ready
-	function onDeviceReady() {
-
-		// is ready?
-		getElementById('ready').style.visibility="visible";
-
-	  	var db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1});
-	  	
-		function Test(){
-			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
-			  var len = results.rows.length, i;
-			  for (i = 0; i < len; i++) {
-			    alert(results.rows.item(i).text);
-			  }
-			}
-	});
-
-	}*/
 
 
 /* TRYING TO USE DATABASE */ 
@@ -294,9 +233,9 @@ var db;
 	<div data-role="page" data-theme="b" id="main">
 
 		<div data-role="header">
-			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" ontouchstart="chan()" style="visibility:hidden"></a>
+			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" ontouchstart="show_all()" style="visibility:hidden"></a>
 			<h1>MAQUINARIAS</h1>
-			<a href="#DELETE" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
+			<a href="#" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all" ontouchstart="update('1','choque','CM','1')"></a>
 			
 			
 		</div>
