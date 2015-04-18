@@ -225,14 +225,14 @@
 		alert('device is ready'); 
 
 		if(document.getElementById('ready').style.visibility="visible"){
-			alert('asign ok');
+			
 		}
 
-		alert('mid');
+	
 
 		var db;
 		if (db = window.sqlitePlugin.openDatabase({name: "supervisor.db", createFromLocation: 1, androidLockWorkaround: 1})) {
-			alert('asign ok');
+			
 		}
 		
 
@@ -240,12 +240,12 @@
 			tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
 			  var len = results.rows.length, i;
 			  for (i = 0; i < len; i++) {
-			    alert(" "+results.rows.item(i).id+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+			    alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
 			  }
 			});
 		});
 		
-		alert('salida');
+		
 
 
 	} , false);
