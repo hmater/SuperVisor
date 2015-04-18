@@ -234,7 +234,7 @@ var db;
 
 
 	function show_all(){
-				alert('in');
+				//alert('in');
 				db.transaction(function(tx) {
 					tx.executeSql('SELECT * FROM MAQUINAS_TABLE', [], function (tx, results) {
 					  var len = results.rows.length, i;
@@ -242,16 +242,22 @@ var db;
 					  for (i = 0; i < len; i++) {
 					    //alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
 					  //document.getElementById('ready').style.visibility="visible";
-						  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="1"){
-						  	alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+						  if(results.rows.item(i).tipo=="CM" && results.rows.item(i).status=="0"){
+						  	//alert(" "+results.rows.item(i).ID+" "+results.rows.item(i).tipo+" "+results.rows.item(i).single_id+" ");
+						  	document.getElementById('ready').style.visibility="visible";
 						  }
 					  }
 
 					});
 				});
-				alert('out');
+				//alert('out');
 			}
 
+
+
+	function chan(){
+		$("#selectCamion1").val('on').slider("refresh");
+	}
 	/*
 	// Wait for Cordova to load
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -288,7 +294,7 @@ var db;
 	<div data-role="page" data-theme="b" id="main">
 
 		<div data-role="header">
-			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" ontouchstart="show_all()" style="visibility:hidden"></a>
+			<a id="ready" href="#" data-role="button" data-transition="none" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" ontouchstart="chan()" style="visibility:hidden"></a>
 			<h1>MAQUINARIAS</h1>
 			<a href="#DELETE" data-role="button" data-transition="none" class="ui-btn ui-btn-right ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
 			
@@ -332,7 +338,7 @@ var db;
 							<input id="inputCamion1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion1" name="Camion1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -350,7 +356,7 @@ var db;
 							<input id="inputCamion2" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion2" name="Camion2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -365,7 +371,7 @@ var db;
 							<input id="inputCamion3" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion3" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion3" name="Camion3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -380,7 +386,7 @@ var db;
 							<input id="inputCamion4" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion4" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion4" name="Camion4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -395,7 +401,7 @@ var db;
 							<input id="inputCamion5" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion5" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion5" name="Camion5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -410,7 +416,7 @@ var db;
 							<input id="inputCamion6" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion6" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion6" name="Camion6" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -425,7 +431,7 @@ var db;
 							<input id="inputCamion7" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion7" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion7" name="Camion7" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -440,7 +446,7 @@ var db;
 							<input id="inputCamion8" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion8" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion8" name="Camion8" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -455,7 +461,7 @@ var db;
 							<input id="inputCamion9" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion9" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion9" name="Camion9" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -470,7 +476,7 @@ var db;
 							<input id="inputCamion10" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion10" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion10" name="Camion10" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -485,7 +491,7 @@ var db;
 							<input id="inputCamion11" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion11" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion11" name="Camion11" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -500,7 +506,7 @@ var db;
 							<input id="inputCamion12" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Camion12" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCamion12" name="Camion12" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -534,7 +540,7 @@ var db;
 							<input id="inputBulldozer1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Bulldozer1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectBulldozer1" name="Bulldozer1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -549,7 +555,7 @@ var db;
 							<input id="inputBulldozer2" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Bulldozer2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectBulldozer2" name="Bulldozer2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -564,7 +570,7 @@ var db;
 							<input id="inputBulldozer3" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Bulldozer3" data-role="slider" class="ui-block-c onoff">
+					<select id="selectBulldozer3" name="Bulldozer3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -579,7 +585,7 @@ var db;
 							<input id="inputBulldozer4" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Bulldozer4" data-role="slider" class="ui-block-c onoff">
+					<select id="selectBulldozer4" name="Bulldozer4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -594,7 +600,7 @@ var db;
 							<input id="inputBulldozer5" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Bulldozer5" data-role="slider" class="ui-block-c onoff">
+					<select id="selectBulldozer5" name="Bulldozer5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -631,7 +637,7 @@ var db;
 							<input id="inputMotoniveladora1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Motoniveladora1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectMotoniveladora1" name="Motoniveladora1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -646,7 +652,7 @@ var db;
 							<input id="inputMotoniveladora2" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Motoniveladora2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectMotoniveladora2" name="Motoniveladora2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -684,7 +690,7 @@ var db;
 							<input id="inputAljibe1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Aljibe1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectAljibe1" name="Aljibe1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -699,7 +705,7 @@ var db;
 							<input id="inputAljibe2" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Aljibe2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectAljibe2" name="Aljibe2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -737,7 +743,7 @@ var db;
 							<input id="inputWheeldozer1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Wheeldozer1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectWheeldozer1" name="Wheeldozer1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -774,7 +780,7 @@ var db;
 							<input id="inputPicarrocas1" type="text"  data-theme="a">
 						</form>
 					</div>
-					<select name="Picarrocas1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectPicarrocas1" name="Picarrocas1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -810,7 +816,7 @@ var db;
 							<input id="inputExcavadora2" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Excavadora2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectExcavadora2" name="Excavadora2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -825,7 +831,7 @@ var db;
 							<input id="inputExcavadora3" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Excavadora3" data-role="slider" class="ui-block-c onoff">
+					<select id="selectExcavadora3" name="Excavadora3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -840,7 +846,7 @@ var db;
 							<input id="inputExcavadora4" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Excavadora4" data-role="slider" class="ui-block-c onoff">
+					<select id="selectExcavadora4" name="Excavadora4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -855,7 +861,7 @@ var db;
 							<input id="inputExcavadora5" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Excavadora5" data-role="slider" class="ui-block-c onoff">
+					<select id="selectExcavadora5" name="Excavadora5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -899,7 +905,7 @@ var db;
 						</form>
 
 					</div>
-					<select name="Perforadora1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectPerforadora1" name="Perforadora1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -914,7 +920,7 @@ var db;
 							<input id="inputPerforadora2" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Perforadora2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectPerforadora2" name="Perforadora2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -929,7 +935,7 @@ var db;
 							<input id="inputPerforadora3" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Perforadora3" data-role="slider" class="ui-block-c onoff">
+					<select id="selectPerforadora3" name="Perforadora3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -944,7 +950,7 @@ var db;
 							<input id="inputPerforadora4" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="Perforadora4" data-role="slider" class="ui-block-c onoff">
+					<select id="selectPerforadora4" name="Perforadora4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -986,7 +992,7 @@ var db;
 						</form>
 
 					</div>
-					<select name="CFrontal1" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCFrontal1" name="CFrontal1" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -1001,7 +1007,7 @@ var db;
 							<input id="inputCFrontal2" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="CFrontal2" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCFrontal2" name="CFrontal2" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -1016,7 +1022,7 @@ var db;
 							<input id="inputCFrontal3" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="CFrontal3" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCFrontal3" name="CFrontal3" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -1031,7 +1037,7 @@ var db;
 							<input id="inputCFrontal4" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="CFrontal4" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCFrontal4" name="CFrontal4" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
@@ -1046,7 +1052,7 @@ var db;
 							<input id="inputCFrontal5" type="text" data-theme="a">
 						</form>
 					</div>
-					<select name="CFrontal5" data-role="slider" class="ui-block-c onoff">
+					<select id="selectCFrontal5" name="CFrontal5" data-role="slider" class="ui-block-c onoff">
 					<option value="off">F/S</option>
 					<option value="on" selected="selected">OP</option>
 					</select>
