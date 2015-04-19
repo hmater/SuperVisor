@@ -192,6 +192,7 @@
 					if(results.rows.item(i).tipo=="CF"){tipo_maquina="CFrontal";}
 
 				  	if(results.rows.item(i).status=="0"){
+				  		alert(results.rows.item(i).single_id);
 					  	$("#select"+tipo_maquina+results.rows.item(i).single_id).val('off').slider("refresh");
 					  	document.getElementById("input"+tipo_maquina+results.rows.item(i).single_id).value = results.rows.item(i).descrip;
 						document.getElementById("form"+tipo_maquina+results.rows.item(i).single_id).style.visibility = "visible";
