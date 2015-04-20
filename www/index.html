@@ -173,8 +173,8 @@
 			  var len = results.rows.length, i;
 
 
-			  	for (i = 0; i < len; i++) {
-			  		
+			  	//for (i = 0; i < len; i++) {
+				  	/*	
 					if(results.rows.item(i).tipo=="CM"){tipo_maquina="Camion";			}
 					if(results.rows.item(i).tipo=="BD"){tipo_maquina="Bulldozer";		}
 					if(results.rows.item(i).tipo=="MN"){tipo_maquina="Motoniveladora";	}
@@ -184,31 +184,60 @@
 					if(results.rows.item(i).tipo=="EX"){tipo_maquina="Excavadora";		}
 					if(results.rows.item(i).tipo=="PF"){tipo_maquina="Perforadora";		}
 					if(results.rows.item(i).tipo=="CF"){tipo_maquina="CFrontal";		}
+					*/
 
-				  	if(results.rows.item(i).status=="0"){
+				  	//if(results.rows.item(i).status=="0"){
 				  		//alert(results.rows.item(i).tipo+" "+tipo_maquina+" "+results.rows.item(i).single_id);
-				  		alert("#select"+tipo_maquina+results.rows.item(i).single_id);
+				  		/*alert("#select"+tipo_maquina+results.rows.item(i).single_id);
 				  		alert("input"+tipo_maquina+results.rows.item(i).single_id);
-				  		alert("form"+tipo_maquina+results.rows.item(i).single_id);
+				  		alert("form"+tipo_maquina+results.rows.item(i).single_id);*/
+
+				  		//cambio(results.rows,len);
 					  	//$("#select"+tipo_maquina+results.rows.item(i).single_id).val('off').slider("refresh");
 					  	//document.getElementById("input"+tipo_maquina+results.rows.item(i).single_id).value = results.rows.item(i).descrip;
 						//document.getElementById("form"+tipo_maquina+results.rows.item(i).single_id).style.visibility = "visible";
 
 						/*suma(results.rows.item(i).tipo);
 						mostrar(results.rows.item(i).tipo);*/
-				  	}else{
+				  	//}//else{
 				  		///$("#select"+tipo_maquina+results.rows.item(i).single_id).val('on').slider("refresh");
 					  	//document.getElementById("input"+tipo_maquina+results.rows.item(i).single_id).value = "";
 						//document.getElementById("form"+tipo_maquina+results.rows.item(i).single_id).style.visibility = "hidden";
 						/*suma(results.rows.item(i).tipo);
 						mostrar(results.rows.item(i).tipo);*/
-				  	}
+				  	//}
 
-			  	}
+			  	//}
 			});
-		});
+		},errorDB,cambio);
 		
 	} , false);
+
+	function errorDB(){
+		alert("error");
+	}
+
+	
+	function cambio(){
+
+		//var i=1;
+
+		if(results.rows.item(1).tipo=="CM"){tipo_maquina="Camion";			}
+		if(results.rows.item(1).tipo=="BD"){tipo_maquina="Bulldozer";		}
+		if(results.rows.item(1).tipo=="MN"){tipo_maquina="Motoniveladora";	}
+		if(results.rows.item(1).tipo=="CA"){tipo_maquina="Aljibe";			}
+		if(results.rows.item(1).tipo=="WD"){tipo_maquina="Wheeldozer";		}
+		if(results.rows.item(1).tipo=="PR"){tipo_maquina="Picarrocas";		}
+		if(results.rows.item(1).tipo=="EX"){tipo_maquina="Excavadora";		}
+		if(results.rows.item(1).tipo=="PF"){tipo_maquina="Perforadora";		}
+		if(results.rows.item(1).tipo=="CF"){tipo_maquina="CFrontal";		}
+
+		alert("form"+tipo_maquina+results.rows.item(1).single_id);
+
+		//$("#select"+tipo_maquina+results.rows.item(i).single_id).val('off').slider("refresh");
+	  	//document.getElementById("input"+tipo_maquina+results.rows.item(i).single_id).value = results.rows.item(i).descrip;
+		//document.getElementById("form"+tipo_maquina+results.rows.item(i).single_id).style.visibility = "visible";
+	}
 
 
 	function show_all(){
